@@ -1,0 +1,29 @@
+def partition(a, lb, ub):
+    pivot = a[lb]
+    start = lb
+    end = ub
+    while start < end:
+        while a[start] <= pivot and start < end:
+            start += 1
+        while a[end] > pivot:
+            end -= 1
+        if start < end:
+            (a[start], a[end]) = (a[end], a[start])
+    (a[lb], a[end]) = (a[end], a[lb])
+    return end
+
+
+def quicksort(a, lb, ub):
+    if lb < ub:
+        location = partition(a, lb, ub)
+        quicksort(a, lb, location-1)
+        quicksort(a, location+1, ub)
+
+
+n = int(input("Enter number of elements: "))
+a = []
+for i in range(n):
+    a.append(int(input()))
+print("Elements are: ", a)
+quicksort(a, 0, len(a)-1)
+print("Sorted Elements are: ", a)
