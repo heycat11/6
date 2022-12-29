@@ -1,0 +1,19 @@
+graph = {
+    'A' : ['B', 'C'],
+    'B' : ['A', 'D', 'E'],
+    'C' : ['A', 'E'],
+    'D' : ['B', 'E', 'F'],
+    'E' : ['B', 'C', 'D', 'F'],
+    'F' : ['D', 'E'],
+}
+
+def dfs (graph, node, visited):
+    if node not in visited:
+        visited.append (node)
+
+        for k in graph[node]:
+            dfs (graph, k, visited)
+    return visited
+
+visited = dfs (graph, 'A', [])
+print (visited)
