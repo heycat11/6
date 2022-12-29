@@ -1,0 +1,38 @@
+
+def backtrack(Q,r):
+    if r==len(Q):
+        print_chess_board(Q)
+    else:
+        for j in range(len(Q)):
+            legal=True
+            for i in range(r):
+                if((Q[i]==j) or (Q[i]==j+r-i) or (Q[i]==j-r+i)):
+                    legal=False
+
+            if legal:
+                Q[r]=j
+                backtrack(Q,r+1)
+
+
+def print_chess_board(d):
+    chess_board=''
+    for i in range(len(d)):
+        for j in range(len(d)):
+            if j==d[i]:
+                chess_board +="Q"
+            else:
+                chess_board +="_ "
+        chess_board +="\n"
+
+
+    print(chess_board)
+
+def create_chess_board(size):
+    mat=[]
+    for i in range(size):
+        mat.append(0)
+    return mat
+
+size=int(input("ENter the chess board size : "))
+backtrack(create_chess_board(size),0)
+
