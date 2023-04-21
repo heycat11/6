@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1{
+color:red;
+}
+h1:hover{
+bgcolor:blue;
+color:black;
+}
+h2.myclass_1{
+color:orange;
+}
+.myclass_2{
+color:blue;
+}
+#my_h4{
+color:green;
+}
+
+*{
+//font-size:25px;
+}
+</style>
+</head>
+<body>
+<h1>ratatata</h1>
+<h2 class="myclass_1">tadata</h2>
+<h3 class="myclass_2">ratadada</h3>
+<h4 id="my-h4">ratatata</h4>
+<h5>end</h5>
+</body>
+</html>
