@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<script>
+function capitals(c)
+{
+var selected=c.options[c.selectedIndex].value;
+document.getElementById("cap").innerHTML=selected;
+}
+</script>
+<style type="text/css">
+select{
+color:navy;
+font-family:CASTELLAR;
+font-size:30;
+background-color:#ffffce;
+text-align:center;
+}
+marquee{font-size:35;
+color:tomato;
+}
+</style>
+<title>Select here</title>
+</head>
+<body bgcolor="teal" background="city.jpeg"><center>
+<marquee>Select the country name to know the capital</marquee>
+<form action=" ">
+<select name="countries" onchange="capitals(this);">
+<option value="capital of INDIA is NEW DELHI">INDIA</option>
+<option value="capital of Japan is Tokyo">Japan</option>
+<option value="capital of philippines">UK </option>
+<option value="capital of AUSTRALIA is SYDNEY"> AUSTRALIA</option>
+<option value="capital of NETHERLANDS is AMSTERDAM">NETHERLANDS </option>
+</select>
+<h1 style="color:black;font-family:'FELIX TITLING';font-size:50;" id="cap" type="text" /></h1>
+</form>
+</body>
+</html>
